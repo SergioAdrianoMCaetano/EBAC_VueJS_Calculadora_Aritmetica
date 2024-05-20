@@ -31,6 +31,8 @@
         return estado.num1 * estado.num2  
       case 'dividir':
         return estado.num2 !== 0 ? estado.num1 / estado.num2 : 'Erro: Divisão por zero';
+      case 'percentual':
+        return estado.num1 * (estado.num2 / 100);    
       default:
         return 0;
     }
@@ -46,6 +48,8 @@
         return '*';
       case 'dividir':
         return '/';
+      case 'percentual':
+        return '%';  
       default:
         return '';
     }
@@ -71,6 +75,7 @@
         <option value="subtrair"> - </option>
         <option value="multiplicar"> * </option>
         <option value="dividir"> / </option>
+        <option value="percentual"> % </option>
       </select>
       <p class="resultado m-2"><strong>Resultado: </strong>{{ resultado }}</p>
     </div>
